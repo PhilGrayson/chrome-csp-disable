@@ -17,7 +17,7 @@ var callback = function(details) {
 };
 
 var filter = {
-  urls: ["http://*/*"],
+  urls: ["*://*/*"],
   types: ["main_frame", "sub_frame"]
 };
 
