@@ -1,4 +1,4 @@
-var isActive = false;
+var isActive = true;
 
 var callback = function(details) {
   if (!isActive) {
