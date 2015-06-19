@@ -5,7 +5,7 @@ var callback = function(details) {
       return;
   }
 
-  for (i = 0; i < details.responseHeaders.length; i++) {
+  for (var i = 0; i < details.responseHeaders.length; i++) {
     if ('content-security-policy' === details.responseHeaders[i].name.toLowerCase()) {
       details.responseHeaders[i].value = '';
     }
@@ -18,7 +18,7 @@ var callback = function(details) {
 
 var filter = {
   urls: ["http://*/*"],
-  types: ["main_frame"]
+  types: ["main_frame", "sub_frame"]
 };
 
 chrome.webRequest.onHeadersReceived.addListener(callback, filter, ["blocking", "responseHeaders"]);
