@@ -1,7 +1,7 @@
 {
   "name": "Disable Content-Security-Policy",
   "description": "Disable content-security-policy for web application testing",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Phil Grayson",
   "homepage_url": "https://github.com/PhilGrayson/chrome-csp-disable",
   "manifest_version": 2,
