@@ -1,7 +1,7 @@
-var isActive = true;
+var isCSPDisabled = false;
 
-var callback = function(details) {
-  if (!isActive) {
+var onHeadersReceived = function(details) {
+  if (!isCSPDisabled) {
       return;
   }
 
@@ -16,19 +16,24 @@ var callback = function(details) {
   };
 };
 
+var updateUI = function() {
+  var iconName = isCSPDisabled ? 'on' : 'off';
+  var title    = isCSPDisabled ? 'disabled' : 'enabled';
+
+  chrome.browserAction.setIcon({ path: "images/icon38-" + iconName + ".png" });
+  chrome.browserAction.setTitle({ title: 'Content-Security-Policy headers are ' + title });
+};
+
 var filter = {
   urls: ["*://*/*"],
   types: ["main_frame", "sub_frame"]
 };
 
-chrome.webRequest.onHeadersReceived.addListener(callback, filter, ["blocking", "responseHeaders"]);
+chrome.webRequest.onHeadersReceived.addListener(onHeadersReceived, filter, ["blocking", "responseHeaders"]);
 
-
-chrome.browserAction.onClicked.addListener(function(tab) {
-    var state = isActive ? 'off' : 'on';
-    var details = {
-        path: "images/icon38-" + state + ".png"
-    };
-    chrome.browserAction.setIcon(details);
-    isActive = !isActive;
+chrome.browserAction.onClicked.addListener(function() {
+  isCSPDisabled = !isCSPDisabled;
+  updateUI()
 });
+
+updateUI();
