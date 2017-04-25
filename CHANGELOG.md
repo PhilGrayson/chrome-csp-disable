@@ -1,3 +1,6 @@
+1.0.5
+  - Fix manifest description being too long from v1.0.4
+
 1.0.4
   - CSP headers are enabled by default when you install this extension. You must
     click the extention's button to disable CSP.
