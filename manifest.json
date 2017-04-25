@@ -1,6 +1,7 @@
 {
   "name": "Disable Content-Security-Policy",
-  "description": "Disable content-security-policy for web application testing",
+  "default_locale": "en",
+  "description": "__MSG_extDescription__",
   "version": "1.0.3",
   "author": "Phil Grayson",
   "homepage_url": "https://github.com/PhilGrayson/chrome-csp-disable",
