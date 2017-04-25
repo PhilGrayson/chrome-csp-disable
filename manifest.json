@@ -1,7 +1,8 @@
 {
   "name": "Disable Content-Security-Policy",
-  "description": "Disable content-security-policy for web application testing",
-  "version": "1.0.3",
+  "default_locale": "en",
+  "description": "__MSG_extDescription__",
+  "version": "1.0.4",
   "author": "Phil Grayson",
   "homepage_url": "https://github.com/PhilGrayson/chrome-csp-disable",
   "manifest_version": 2,
@@ -16,13 +17,13 @@
     "persistent": true
   },
   "browser_action": {
-      "default_title": "Toggle Content-Security-Policy",
-      "default_icon": {
-          "16": "images/icon38-off.png"
-      }
+    "default_title": "Content-Security-Policy headers are enabled",
+    "default_icon": {
+      "16": "images/icon38-off.png"
+    }
   },
   "icons": {
-      "48": "images/icon48.png",
-      "128": "images/icon128.png"
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   }
 }
