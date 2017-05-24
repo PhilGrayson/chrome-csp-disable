@@ -33,6 +33,11 @@ chrome.webRequest.onHeadersReceived.addListener(onHeadersReceived, filter, ["blo
 
 chrome.browserAction.onClicked.addListener(function() {
   isCSPDisabled = !isCSPDisabled;
+
+  if (isCSPDisabled) {
+    chrome.browsingData.remove({}, {"serviceWorkers": true}, function () {});
+  }
+
   updateUI()
 });
 

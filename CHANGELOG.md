@@ -1,3 +1,6 @@
+1.0.6
+  - Fix the extension not working for https://web.whatsapp.com
+
 1.0.5
   - Fix manifest description being too long from v1.0.4
 

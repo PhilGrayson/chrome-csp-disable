@@ -2,13 +2,14 @@
   "name": "Disable Content-Security-Policy",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Phil Grayson",
   "homepage_url": "https://github.com/PhilGrayson/chrome-csp-disable",
   "manifest_version": 2,
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "browsingData",
     "http://*/*",
     "https://*/*"
   ],
