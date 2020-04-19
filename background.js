@@ -1,12 +1,13 @@
+/* global chrome */
 var isCSPDisabled = false;
 
-var onHeadersReceived = function(details) {
+var onHeadersReceived = function (details) {
   if (!isCSPDisabled) {
-      return;
+    return;
   }
 
   for (var i = 0; i < details.responseHeaders.length; i++) {
-    if ('content-security-policy' === details.responseHeaders[i].name.toLowerCase()) {
+    if (details.responseHeaders[i].name.toLowerCase() === 'content-security-policy') {
       details.responseHeaders[i].value = '';
     }
   }
@@ -16,29 +17,30 @@ var onHeadersReceived = function(details) {
   };
 };
 
-var updateUI = function() {
+var updateUI = function () {
   var iconName = isCSPDisabled ? 'on' : 'off';
-  var title    = isCSPDisabled ? 'disabled' : 'enabled';
+  var title = isCSPDisabled ? 'disabled' : 'enabled';
 
-  chrome.browserAction.setIcon({ path: "images/icon38-" + iconName + ".png" });
+  chrome.browserAction.setIcon({ path: 'images/icon38-' + iconName + '.png' });
   chrome.browserAction.setTitle({ title: 'Content-Security-Policy headers are ' + title });
 };
 
 var filter = {
-  urls: ["*://*/*"],
-  types: ["main_frame", "sub_frame"]
+  urls: ['*://*/*'],
+  types: ['main_frame', 'sub_frame']
 };
 
-chrome.webRequest.onHeadersReceived.addListener(onHeadersReceived, filter, ["blocking", "responseHeaders"]);
+chrome.webRequest.onHeadersReceived.addListener(
+  onHeadersReceived, filter, ['blocking', 'responseHeaders']
+);
 
-chrome.browserAction.onClicked.addListener(function() {
+chrome.browserAction.onClicked.addListener(function () {
   isCSPDisabled = !isCSPDisabled;
 
   if (isCSPDisabled) {
-    chrome.browsingData.remove({}, {"serviceWorkers": true}, function () {});
+    chrome.browsingData.remove({}, { serviceWorkers: true }, function () {});
   }
 
-  updateUI()
+  updateUI();
 });
-
 updateUI();
