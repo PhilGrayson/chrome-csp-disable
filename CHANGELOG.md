@@ -1,3 +1,5 @@
+2.0.0
+  - CSP headers are disabled per tab.
 1.0.6
   - Fix the extension not working for https://web.whatsapp.com
 
