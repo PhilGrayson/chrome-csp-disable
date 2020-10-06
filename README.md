@@ -7,7 +7,7 @@ Use this only as a last resort. Disabling CSP means disabling features designed 
 
 
 
-## Contributors
+## Contributors ##
 
 * [Phil Grayson](https://github.com/PhilGrayson)
 * [Denis Gorbachev](https://github.com/DenisGorbachev)
