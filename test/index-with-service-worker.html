@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" manifest="example.appcache">
+
+  <head>
+    <title>Content-Security-Policy block test site</title>
+  </head>
+
+  <body>
+    <h1>Content-Security-Policy block test site</h1>
+    <a href="index-with-service-worker.html">Test with <strong>non</strong> Service Worker enabled page</a>
+
+    <script src="register-service-worker.js"></script>
+
+    <script src="http://example.com/script.js"></script>
+  </body>
+
+</html>

@@ -1,4 +1,5 @@
-Disable Content-Security-Policy (CSP) in Chromium browsers for web application testing.
+Disable Content-Security-Policy (CSP) headers.
+This is an aid to building good policies, especially on pages that load lots of third-party resources.
 
 * [Install for Chrome](https://chrome.google.com/webstore/detail/disable-content-security/ieelmcmcagommplceebfedjlakkhpden)
 * [Install for Edge](https://microsoftedge.microsoft.com/addons/detail/disable-contentsecurity/ecmfamimnofkleckfamjbphegacljmbp)
@@ -7,6 +8,8 @@ Use this only as a last resort. Disabling CSP means disabling features designed 
 
 Licensed under https://unlicense.org/.
 
+## Privacy policy
+This extension does not collect any user data.
 
 ## Contributors
 

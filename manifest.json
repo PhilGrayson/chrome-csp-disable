@@ -2,23 +2,21 @@
   "name": "Disable Content-Security-Policy",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "author": "Phil Grayson",
   "homepage_url": "https://github.com/PhilGrayson/chrome-csp-disable",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
+    "storage",
+    "activeTab",
     "browsingData",
-    "http://*/*",
-    "https://*/*"
+    "declarativeNetRequest"
   ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "service_worker": "service_worker.js"
   },
-  "browser_action": {
-    "default_title": "Content-Security-Policy headers are enabled",
+  "action": {
+    "default_title": "Content-Security-Policy headers are enabled for this tab",
     "default_icon": {
       "16": "images/icon38-off.png"
     }
